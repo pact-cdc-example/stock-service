@@ -1,0 +1,161 @@
+I, [2023-06-20T15:22:23.595935 #73395]  INFO -- : Registered expected interaction GET /api/v1/products/52fdfc07-2182-454f-963f-5f0f9a621d72
+D, [2023-06-20T15:22:23.596021 #73395] DEBUG -- : {
+  "description": "A request for product with a non exist product id",
+  "providerState": "i get product not found error when the product with given id does not exists",
+  "request": {
+    "method": "GET",
+    "path": "/api/v1/products/52fdfc07-2182-454f-963f-5f0f9a621d72"
+  },
+  "response": {
+    "status": 400,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "code": 20001,
+      "message": "Product not found."
+    }
+  },
+  "metadata": null
+}
+I, [2023-06-20T15:22:23.596448 #73395]  INFO -- : Received request GET /api/v1/products/52fdfc07-2182-454f-963f-5f0f9a621d72
+D, [2023-06-20T15:22:23.596496 #73395] DEBUG -- : {
+  "path": "/api/v1/products/52fdfc07-2182-454f-963f-5f0f9a621d72",
+  "query": "",
+  "method": "get",
+  "headers": {
+    "Content-Type": "application/json",
+    "Host": "localhost:52335",
+    "User-Agent": "Go-http-client/1.1",
+    "Accept": "application/json",
+    "Accept-Encoding": "gzip",
+    "Version": "HTTP/1.1"
+  }
+}
+I, [2023-06-20T15:22:23.596566 #73395]  INFO -- : Found matching response for GET /api/v1/products/52fdfc07-2182-454f-963f-5f0f9a621d72
+D, [2023-06-20T15:22:23.596591 #73395] DEBUG -- : {
+  "status": 400,
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "code": 20001,
+    "message": "Product not found."
+  }
+}
+I, [2023-06-20T15:22:23.596927 #73395]  INFO -- : Cleared interactions
+I, [2023-06-20T15:22:23.597981 #73395]  INFO -- : Registered expected interaction GET /api/v1/products/52fdfc07-2182-454f-963f-5f0f9a621d72
+D, [2023-06-20T15:22:23.598041 #73395] DEBUG -- : {
+  "description": "A request for product with a exist product id",
+  "providerState": "i get product with given id",
+  "request": {
+    "method": "GET",
+    "path": "/api/v1/products/52fdfc07-2182-454f-963f-5f0f9a621d72"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "code": {
+        "json_class": "Pact::SomethingLike",
+        "contents": "aut"
+      },
+      "color": {
+        "json_class": "Pact::SomethingLike",
+        "contents": "Peru"
+      },
+      "created_at": {
+        "json_class": "Pact::SomethingLike",
+        "contents": "1980-08-24T14:31:42.817455089Z"
+      },
+      "id": {
+        "json_class": "Pact::SomethingLike",
+        "contents": "52fdfc07-2182-454f-963f-5f0f9a621d72"
+      },
+      "image_url": {
+        "json_class": "Pact::SomethingLike",
+        "contents": "https://picsum.photos/200/100"
+      },
+      "name": {
+        "json_class": "Pact::SomethingLike",
+        "contents": "Lina Carroll"
+      },
+      "price": {
+        "json_class": "Pact::SomethingLike",
+        "contents": 42.47
+      },
+      "type": {
+        "json_class": "Pact::SomethingLike",
+        "contents": "quae"
+      },
+      "updated_at": {
+        "json_class": "Pact::SomethingLike",
+        "contents": "2016-09-09T05:17:26.436340495Z"
+      }
+    }
+  },
+  "metadata": null
+}
+I, [2023-06-20T15:22:23.598385 #73395]  INFO -- : Received request GET /api/v1/products/52fdfc07-2182-454f-963f-5f0f9a621d72
+D, [2023-06-20T15:22:23.598425 #73395] DEBUG -- : {
+  "path": "/api/v1/products/52fdfc07-2182-454f-963f-5f0f9a621d72",
+  "query": "",
+  "method": "get",
+  "headers": {
+    "Content-Type": "application/json",
+    "Host": "localhost:52335",
+    "User-Agent": "Go-http-client/1.1",
+    "Accept": "application/json",
+    "Accept-Encoding": "gzip",
+    "Version": "HTTP/1.1"
+  }
+}
+I, [2023-06-20T15:22:23.598470 #73395]  INFO -- : Found matching response for GET /api/v1/products/52fdfc07-2182-454f-963f-5f0f9a621d72
+D, [2023-06-20T15:22:23.598523 #73395] DEBUG -- : {
+  "status": 200,
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "code": {
+      "json_class": "Pact::SomethingLike",
+      "contents": "aut"
+    },
+    "color": {
+      "json_class": "Pact::SomethingLike",
+      "contents": "Peru"
+    },
+    "created_at": {
+      "json_class": "Pact::SomethingLike",
+      "contents": "1980-08-24T14:31:42.817455089Z"
+    },
+    "id": {
+      "json_class": "Pact::SomethingLike",
+      "contents": "52fdfc07-2182-454f-963f-5f0f9a621d72"
+    },
+    "image_url": {
+      "json_class": "Pact::SomethingLike",
+      "contents": "https://picsum.photos/200/100"
+    },
+    "name": {
+      "json_class": "Pact::SomethingLike",
+      "contents": "Lina Carroll"
+    },
+    "price": {
+      "json_class": "Pact::SomethingLike",
+      "contents": 42.47
+    },
+    "type": {
+      "json_class": "Pact::SomethingLike",
+      "contents": "quae"
+    },
+    "updated_at": {
+      "json_class": "Pact::SomethingLike",
+      "contents": "2016-09-09T05:17:26.436340495Z"
+    }
+  }
+}
+I, [2023-06-20T15:22:23.598823 #73395]  INFO -- : Verifying - interactions matched
+I, [2023-06-20T15:22:23.599134 #73395]  INFO -- : Cleared interactions

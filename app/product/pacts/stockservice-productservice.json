@@ -1,0 +1,87 @@
+{
+  "consumer": {
+    "name": "StockService"
+  },
+  "provider": {
+    "name": "ProductService"
+  },
+  "interactions": [
+    {
+      "description": "A request for product with a non exist product id",
+      "providerState": "i get product not found error when the product with given id does not exists",
+      "request": {
+        "method": "GET",
+        "path": "/api/v1/products/52fdfc07-2182-454f-963f-5f0f9a621d72"
+      },
+      "response": {
+        "status": 400,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "code": 20001,
+          "message": "Product not found."
+        }
+      }
+    },
+    {
+      "description": "A request for product with a exist product id",
+      "providerState": "i get product with given id",
+      "request": {
+        "method": "GET",
+        "path": "/api/v1/products/52fdfc07-2182-454f-963f-5f0f9a621d72"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json"
+        },
+        "body": {
+          "code": "aut",
+          "color": "Peru",
+          "created_at": "1980-08-24T14:31:42.817455089Z",
+          "id": "52fdfc07-2182-454f-963f-5f0f9a621d72",
+          "image_url": "https://picsum.photos/200/100",
+          "name": "Lina Carroll",
+          "price": 42.47,
+          "type": "quae",
+          "updated_at": "2016-09-09T05:17:26.436340495Z"
+        },
+        "matchingRules": {
+          "$.body.code": {
+            "match": "type"
+          },
+          "$.body.color": {
+            "match": "type"
+          },
+          "$.body.created_at": {
+            "match": "type"
+          },
+          "$.body.id": {
+            "match": "type"
+          },
+          "$.body.image_url": {
+            "match": "type"
+          },
+          "$.body.name": {
+            "match": "type"
+          },
+          "$.body.price": {
+            "match": "type"
+          },
+          "$.body.type": {
+            "match": "type"
+          },
+          "$.body.updated_at": {
+            "match": "type"
+          }
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "pactSpecification": {
+      "version": "2.0.0"
+    }
+  }
+}
