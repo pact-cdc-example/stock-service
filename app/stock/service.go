@@ -2,6 +2,8 @@ package stock
 
 import (
 	"context"
+	"database/sql"
+	"errors"
 	"github.com/google/uuid"
 	"github.com/pact-cdc-example/stock-service/app/product"
 	"github.com/pact-cdc-example/stock-service/pkg/cerr"
@@ -40,14 +42,14 @@ func (s *service) IsProductAvailableInStockInDesiredQuantity(
 	ctx context.Context, req IsProductAvailableInStockRequest,
 ) (*IsProductAvailableInStockResponse, error) {
 	stock, err := s.repository.GetStockByProductID(ctx, *req.ProductID)
-	if err != nil {
+	if err != nil && !errors.Is(err, sql.ErrNoRows) {
 		s.logger.Errorf("error while getting stocks by product id: %v", err)
 		return nil, cerr.Processing()
 	}
 
 	if stock == nil {
 		return nil, cerr.Bag{Code: NoStockInformationFoundAboutGivenProduct,
-			Message: "No stock information found about given product."}
+			Message: "No stock information found for given product id."}
 	}
 
 	if (stock.Quantity - stock.ReservedQuantity) < *req.Quantity {

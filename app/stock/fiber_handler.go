@@ -43,12 +43,14 @@ func (h *handler) IsProductAvailableInStockInDesiredQuantity(c *fiber.Ctx) error
 		return c.Status(fiber.StatusBadRequest).JSON(err)
 	}
 
-	stocks, err := h.service.IsProductAvailableInStockInDesiredQuantity(ctx, req)
+	isAvailableResp, err := h.service.IsProductAvailableInStockInDesiredQuantity(ctx, req)
 	if err != nil {
 		return c.Status(fiber.StatusBadRequest).JSON(err)
 	}
 
-	return c.Status(fiber.StatusOK).JSON(stocks)
+	c.Set(fiber.HeaderContentType, fiber.MIMEApplicationJSON)
+
+	return c.Status(fiber.StatusOK).JSON(isAvailableResp)
 }
 
 func (h *handler) CreateStock(c *fiber.Ctx) error {
@@ -89,7 +91,7 @@ func (h *handler) ReserveStock(c *fiber.Ctx) error {
 
 func (h *handler) SetupRoutes(fr fiber.Router) {
 	stocksGroup := fr.Group("/stocks")
-	stocksGroup.Get("/availability", h.IsProductAvailableInStockInDesiredQuantity)
+	stocksGroup.Post("/availability", h.IsProductAvailableInStockInDesiredQuantity)
 	stocksGroup.Post("/", h.CreateStock)
 	stocksGroup.Put("/reserve", h.ReserveStock)
 }

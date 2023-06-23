@@ -40,11 +40,12 @@ func (c *client) GetProductByID(ctx context.Context, id string) (*Product, error
 
 	resBytes, err := c.httpClient.Get(ctx, url, c.headers)
 	if err != nil {
+		fmt.Println("client_err ", err)
 		return nil, err
 	}
 
 	var resp GetProductResponse
-	if err := json.Unmarshal(resBytes, &resp); err != nil {
+	if err = json.Unmarshal(resBytes, &resp); err != nil {
 		return nil, err
 	}
 

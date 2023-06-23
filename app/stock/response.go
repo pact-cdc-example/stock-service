@@ -23,5 +23,5 @@ func NewGetStockResponse(stock *Stock) *GetStockResponse {
 }
 
 type IsProductAvailableInStockResponse struct {
-	IsAvailable bool `json:"is_available,omitempty"`
+	IsAvailable bool `json:"is_available"`
 }

@@ -139,4 +139,6 @@ func (s *ProductConsumerTestSuite) initPact() {
 	//it must be used otherwise it could not create pact file
 	s.pact.Setup(true)
 
+	s.pactServerURL = fmt.Sprintf("http://localhost:%d", s.pact.Server.Port)
+
 }
